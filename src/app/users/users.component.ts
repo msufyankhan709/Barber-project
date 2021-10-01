@@ -22,6 +22,7 @@ const ELEMENT_DATA: users[] = [
   {Name: "Peppertrout", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
   {Name: "Niles", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
   {Name: "Stieve", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
+  {Name: "Smith", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
 ];
 
 
