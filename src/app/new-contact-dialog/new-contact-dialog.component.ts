@@ -9,7 +9,23 @@ export class NewContactDialogComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  img: '../../assets/face.png' = "../../assets/face.png";
+ ngOnInit(): void {
   }
+  onselect(event:any){
+    if (event.target.file){
+      var reader= new FileReader();
+      reader.readAsDataURL(event.target.file[0]);
+      reader.onload=(event:any)=>{
+        this.img=event.target.result;
+      }
+
+    }
+  }
+  
+ save(){}
+ 
+ cancel(){}
+
 
 }

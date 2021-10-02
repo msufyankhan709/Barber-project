@@ -3,6 +3,8 @@ import { Component, OnInit ,ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {SelectionModel} from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
+import { NewContactDialogComponent } from '../new-contact-dialog/new-contact-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 export interface users {
   Name: string;
@@ -37,11 +39,6 @@ export class UsersComponent implements OnInit {
   displayedColumns: string[] = ['select','Name','Title','Company','EmailAddress','phone','Edit'];
   dataSource = new MatTableDataSource<users>(ELEMENT_DATA);
   selection = new SelectionModel<users>(true, []);
-  dialog: any;
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -74,8 +71,9 @@ export class UsersComponent implements OnInit {
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.Name+ 1}`;
   }
 
-  constructor() { }
+  constructor(private dialog:MatDialog) { }
 
+  
   ngOnInit(): void {
   }
 
