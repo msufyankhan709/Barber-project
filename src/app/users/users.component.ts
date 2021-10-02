@@ -37,22 +37,26 @@ export class UsersComponent implements OnInit {
   displayedColumns: string[] = ['select','Name','Title','Company','EmailAddress','phone','Edit'];
   dataSource = new MatTableDataSource<users>(ELEMENT_DATA);
   selection = new SelectionModel<users>(true, []);
+  dialog: any;
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
-ngAfterViewInit() {
-  this.dataSource.paginator = this.paginator;
-}
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
-  /** Whether the number of selected elements matches the total number of rows. */
+
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
     return numSelected === numRows;
   }
 
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle() {
     if (this.isAllSelected()) {
       this.selection.clear();
