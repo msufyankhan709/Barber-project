@@ -10,19 +10,20 @@ export interface users {
   Company: string;
   EmailAddress: any;
   phone:number;
+  Edit:string;
 }
 
 const ELEMENT_DATA: users[] = [
-  {Name: "Rodney ", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
-  {Name: "Jason", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722} ,
-  {Name: "Nelson", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722} ,
-  {Name: "Inverness", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722}  ,
-  {Name: "Fergus", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722} , 
-  {Name: "Ement", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
-  {Name: "Peppertrout", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
-  {Name: "Niles", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
-  {Name: "Stieve", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
-  {Name: "Smith", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722},
+  {Name: "Rodney ", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""},
+  {Name: "Jason", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""} ,
+  {Name: "Nelson", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""} ,
+  {Name: "Inverness", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""}  ,
+  {Name: "Fergus", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""} , 
+  {Name: "Ement", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""},
+  {Name: "Peppertrout", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""},
+  {Name: "Niles", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""},
+  {Name: "Stieve", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""},
+  {Name: "Smith", Title: 'Hair specialist', Company:"Barber", EmailAddress: "support@barber.com",phone:3026366722,Edit:""},
 ];
 
 
@@ -33,7 +34,7 @@ const ELEMENT_DATA: users[] = [
 })
 export class UsersComponent implements OnInit {
 
-  displayedColumns: string[] = ['select','Name','Title','Company','EmailAddress','phone'];
+  displayedColumns: string[] = ['select','Name','Title','Company','EmailAddress','phone','Edit'];
   dataSource = new MatTableDataSource<users>(ELEMENT_DATA);
   selection = new SelectionModel<users>(true, []);
 

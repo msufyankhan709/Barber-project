@@ -1,4 +1,20 @@
 table {
     width: 100%;
-    background-color: aqua;
+}
+header{
+  background-color:whitesmoke;
+  display: inline-table;
+}
+h1{
+  height: 70px;
+  margin-top: 0%;
+}
+button{
+  margin-left: 1250px;
+  width: 100px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  display: inline;
+  margin-top: 0px;
 }
