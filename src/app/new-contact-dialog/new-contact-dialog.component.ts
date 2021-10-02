@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-new-contact-dialog',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewContactDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private matdialogrf:MatDialogRef<NewContactDialogComponent>) { }
 
-  ngOnInit(): void {
+  img: '../../assets/face.png' = "../../assets/face.png";
+ ngOnInit(): void {
   }
+  onselect(event:any){
+    if (event.target.file){
+      var reader= new FileReader();
+      reader.readAsDataURL(event.target.file[0]);
+      reader.onload=(event:any)=>{
+        this.img=event.target.result;
+      }
+
+    }
+  }
+  
+ save(){}
+ 
+ cancel(){
+  this.matdialogrf.close(NewContactDialogComponent)
+ }
+
 
 }

@@ -3,6 +3,8 @@ import { Component, OnInit ,ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {SelectionModel} from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
+import { NewContactDialogComponent } from '../new-contact-dialog/new-contact-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 export interface users {
   Name: string;
@@ -41,18 +43,17 @@ export class UsersComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
-ngAfterViewInit() {
-  this.dataSource.paginator = this.paginator;
-}
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
-  /** Whether the number of selected elements matches the total number of rows. */
+
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
     return numSelected === numRows;
   }
 
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle() {
     if (this.isAllSelected()) {
       this.selection.clear();
@@ -70,8 +71,9 @@ ngAfterViewInit() {
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.Name+ 1}`;
   }
 
-  constructor() { }
+  constructor(private dialog:MatDialog) { }
 
+  
   ngOnInit(): void {
   }
 
