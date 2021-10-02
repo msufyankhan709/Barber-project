@@ -2,3 +2,15 @@
     width: 1000px;
     height: 500px;
 }
+.image{
+    background-color: rgb(196, 195, 194);
+    display: none;
+}
+.imgtext{
+  position: absolute;
+  top: 80px;
+}
+.cancelbutton{
+    position: absolute;
+    margin-left: 800px;
+}
